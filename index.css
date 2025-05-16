@@ -1571,11 +1571,9 @@
   .project-cell-divider {
     z-index: 2000;
     width: 1px;
-    height: 4rem;
+    height: 2rem;
     margin: 1.5rem auto 1.5rem auto;
     opacity: 0.3;
-    outline: 1px dotted #f7f5f5;
-    outline: 1px dotted var(--white1);
   }
   
   .project-cell-divider:last-child {
