@@ -1,6 +1,6 @@
 # My Portfolio – rinsham10
 
-Live site 👉 [https://rinsham10.github.io/portfolio/](https://rinsham10.github.io/v1/)
+Live site 👉 [https://rinsham10.github.io/portfolio/](https://rinsham10.github.io/portfolio/)
 
 
 This is my personal portfolio site built with HTML, CSS & JavaScript
