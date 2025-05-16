@@ -1171,12 +1171,12 @@
     color: #f7f5f5;
     padding: 0.5rem 0;
     letter-spacing: 0.03em;
-     margin-left: 5rem;
+
   }
   
   .ihs-col:first-child p {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    margin-left: 5rem;
+  
   }
   
   .intro-container--links {
