@@ -1131,7 +1131,7 @@
 
 
   .ihs-col:last-child {
-    justify-content: flex-start;
+    
   }
   
   .ihs-col h1 {
@@ -3586,6 +3586,8 @@
     background-color: #333;
     background-color: var(--black2);
   }
+  
+
   
   .tooltip {
     position: absolute;
