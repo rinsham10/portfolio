@@ -3587,6 +3587,11 @@
     background-color: var(--black2);
   }
   
+@media screen and (max-width: 600px) {
+  .floating-menu {
+    display: none !important;
+  }
+}
 
   
   .tooltip {
