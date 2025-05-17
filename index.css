@@ -1182,6 +1182,8 @@
   .intro-container--links {
     flex-direction: row;
     padding-top: 2rem;
+    display: flex; /* Make sure it's flex! */
+    gap: 1rem; /* Add this */
   }
   
   .intro-container--links a {
@@ -1201,9 +1203,7 @@
     font-weight: 400;
   }
   
-  .intro-container--links a:first-child {
-    margin-right: 1rem;
-  }
+
   
   [data-theme=light] .intro-container--links a {
     background-color: #fff;
@@ -1273,11 +1273,10 @@
       justify-content: flex-end;
     }
     .ihs-row:last-child {
-      padding-top: 2rem;
+      padding-top: 0.1rem;
       justify-content: flex-start;
     }
     .ihs-row:last-child .ihs-col:last-child {
-      display: none;
     }
     .ihs-col {
       height: auto;
