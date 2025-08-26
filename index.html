@@ -15,8 +15,14 @@
     <script>
     const lt = localStorage.getItem('co-theme') || 'dark';
     document.documentElement.dataset.theme = lt;
-    document.querySelector('meta[name="color-scheme"]').content = lt;
-    document.querySelector('meta[name="theme-color"]').content = lt === 'dark' ? '#000' : '#fff';
+    const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+    if (colorSchemeMeta) {
+      colorSchemeMeta.content = lt;
+    }
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      themeColorMeta.content = lt === 'dark' ? '#000' : '#fff';
+    }
   </script>
     <style>
       .project-overview--wrapper {
@@ -42,6 +48,30 @@
         overflow-y: auto;
         border-radius: 12px;
       }
+
+      /* --- NEW CSS --- */
+      #more-projects-container {
+        display: none; /* Hidden by default */
+      }
+
+      #toggle-projects-btn {
+        display: block;
+        margin: 2rem auto;
+        padding: 0.75rem 1.5rem;
+        background-color: #161414;
+        color: #fff;
+        border: 1px solid #161616;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      #toggle-projects-btn:hover {
+        background-color: #252424;
+      }
+      /* --- END NEW CSS --- */
+
     </style>
     
 </head>
@@ -89,9 +119,9 @@
                   </div>
           
                   <div class="ihs-col intro-container--links">
-                    <a href="mailto:mohammedrinsham@gmail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="mohammedrinsham@gmail.com"><img src="src/images/svg/mailto.svg" class="icn-svg" alt>Email</a>
-                    <a href="https://www.linkedin.com/in/mohammedrinsham/" title="LinkedIn Profile" target="_blank" rel="noreferrer" data-tooltip-text="linkedin.com/mohammedrinsham"><img class="icn-svg" src="src/images/svg/linkedinw.svg" alt>LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1Wj4W71IO-l3WSGZyFL69CktxOSNBvPcz/view" title="Resume" target="_blank" rel="noreferrer" data-tooltip-text="Resume"><img class="icn-svg" src="src/images/svg/download.svg" alt>Resume</a>
+                    <a href="mailto:mohammedrinsham@gmail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="mohammedrinsham@gmail.com"><img src="src/images/svg/mailto.svg" class="icn-svg" alt="">Email</a>
+                    <a href="https://www.linkedin.com/in/mohammedrinsham/" title="LinkedIn Profile" target="_blank" rel="noreferrer" data-tooltip-text="linkedin.com/mohammedrinsham"><img class="icn-svg" src="src/images/svg/linkedinw.svg" alt="">LinkedIn</a>
+                    <a href="https://drive.google.com/file/d/1Wj4W71IO-l3WSGZyFL69CktxOSNBvPcz/view" title="Resume" target="_blank" rel="noreferrer" data-tooltip-text="Resume"><img class="icn-svg" src="src/images/svg/download.svg" alt="">Resume</a>
                   </div>
                 </div>
           
@@ -145,12 +175,7 @@
               </a>
             </li>
 
-            <li class="float-option">
-              <a href="#proj-tranquil-top" target="_self" rel="noreferrer" title="">
-                <span data-proj-title-index="4.">TRANQUIL</span>
-                <span>JavaScript | HTML | CSS</span>
-              </a>
-            </li>
+            
           </ul>
           <span class="span-br-float"></span>
         </div>  
@@ -159,11 +184,12 @@
 
 
 <!-- AGRISENS-->
-        <div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-agrisens-top" z-index="-1">
+        <!-- **** FIX: Removed style="z-index:-1;" from the div below **** -->
+        <div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-agrisens-top">
           <div class="project-cell__content">
             <div class="project-content__header">
               <div class="pc__header-tabs">
-                <span><input class="proj-header__tabinput" id="agrisens-home" type="radio" name="proj-agrisens--radio" value="Home">
+                <span><input class="proj-header__tabinput" id="agrisens-home" type="radio" name="proj-agrisens--radio" value="Home" checked>
                     <label data-lab-sm="H" data-tab-idx="1" for="agrisens-home" aria-label="Home undefined">Home</label>
                 </span>
                 <span><input class="proj-header__tabinput" id="agrisens-features" type="radio" name="proj-agrisens--radio" value="Features">
@@ -246,11 +272,12 @@
 
 
 <!-- CAMPUSCONNECT-->
-        <div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-portal-top" z-index="-1">
+        <!-- **** FIX: Removed style="z-index:-1;" from the div below **** -->
+        <div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-portal-top">
           <div class="project-cell__content">
             <div class="project-content__header">
               <div class="pc__header-tabs">
-                <span><input class="proj-header__tabinput" id="portal-home" type="radio" name="proj-portal--radio" value="Home">
+                <span><input class="proj-header__tabinput" id="portal-home" type="radio" name="proj-portal--radio" value="Home" checked>
                     <label data-lab-sm="H" data-tab-idx="1" for="portal-home" aria-label="Home undefined">Dashboard</label>
                 </span>
                 <span><input class="proj-header__tabinput" id="portal-Career" type="radio" name="proj-portal--radio" value="Career">
@@ -333,11 +360,12 @@
 
 
 <!-- FOLIUM  -->
-<div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-folium-top" z-index="-1">
+<!-- **** FIX: Removed style="z-index:-1;" from the div below **** -->
+<div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-folium-top">
   <div class="project-cell__content">
     <div class="project-content__header">
       <div class="pc__header-tabs">
-        <span><input class="proj-header__tabinput" id="folium-home" type="radio" name="proj-folium--radio" value="Home"><label data-lab-sm="H" data-tab-idx="1" for="folium-home" aria-label="Home">Home</label></span>
+        <span><input class="proj-header__tabinput" id="folium-home" type="radio" name="proj-folium--radio" value="Home" checked><label data-lab-sm="H" data-tab-idx="1" for="folium-home" aria-label="Home">Home</label></span>
         <span><input class="proj-header__tabinput" id="folium-templates" type="radio" name="proj-folium--radio" value="Templates"><label data-lab-sm="T" data-tab-idx="2" for="folium-templates" aria-label="Templates">Templates</label></span>
         <span><input class="proj-header__tabinput" id="folium-form" type="radio" name="proj-folium--radio" value="Form"><label data-lab-sm="F" data-tab-idx="3" for="folium-form" aria-label="Form">Form</label></span>
         <span><input class="proj-header__tabinput" id="folium-demo" type="radio" name="proj-folium--radio" value="Demo"><label data-lab-sm="D" data-tab-idx="4" for="folium-demo" aria-label="Demo">Demo</label></span>
@@ -402,12 +430,19 @@
         <div class="project-cell-divider"></div>
 <!-- FOLIUM END -->
 
+<!-- Button to toggle projects -->
+<button id="toggle-projects-btn">More Projects</button>
+
+<!-- Container for hidden projects -->
+<div id="more-projects-container">
+
 <!-- TRANQUIL -->
-        <div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-tranquil-top" z-index="-1">
+        <!-- **** FIX: Removed style="z-index:-1;" from the div below **** -->
+        <div class="project-cell proj-cell-tabs" data-project-cell-loaded="true" data-parent-dark="true" id="proj-tranquil-top">
           <div class="project-cell__content">
             <div class="project-content__header">
               <div class="pc__header-tabs">
-                <span><input class="proj-header__tabinput" id="tranquil-home" type="radio" name="proj-tranquil--radio" value="Home"><label data-lab-sm="H" data-tab-idx="1" for="tranquil-home" aria-label="Home">Home</label></span>
+                <span><input class="proj-header__tabinput" id="tranquil-home" type="radio" name="proj-tranquil--radio" value="Home" checked><label data-lab-sm="H" data-tab-idx="1" for="tranquil-home" aria-label="Home">Home</label></span>
                 <span><input class="proj-header__tabinput" id="tranquil-features" type="radio" name="proj-tranquil--radio" value="Features"><label data-lab-sm="F" data-tab-idx="2" for="tranquil-features" aria-label="Features">Features</label></span>
                 <span><input class="proj-header__tabinput" id="tranquil-mood" type="radio" name="proj-tranquil--radio" value="Mood Tracker"><label data-lab-sm="M" data-tab-idx="3" for="tranquil-mood" aria-label="Mood">Mood Tracker</label></span>
                 <span><input class="proj-header__tabinput" id="tranquil-journal" type="radio" name="proj-tranquil--radio" value="Journal"><label data-lab-sm="G" data-tab-idx="4" for="tranquil-journal" aria-label="Journal">Journal</label></span>
@@ -474,6 +509,8 @@
   </div>
 </div>
 <!-- TRANQUIL END -->
+</div> <!-- END container for hidden projects -->
+
 </article>
 
         <aside class="section-divider" style="z-index: 61 !important;"></aside>
@@ -560,13 +597,13 @@
                   <div class="badge-top">
                     <div class="badge-top--profile">
                       <div class="badge-top--container--svg">
-                        <img class="cm-body--img icn-svg" src="src/images/svg/githuboutline.svg" alt>
+                        <img class="cm-body--img icn-svg" src="src/images/svg/githuboutline.svg" alt="">
                       </div>
                       <span data-acc="@rinsham10">@rinsham10</span>
                     </div>
                   </div>
                   <div class="badge-footer">
-                    <img class="icn-svg" src="src/images/svg/bentarrow.svg" alt>
+                    <img class="icn-svg" src="src/images/svg/bentarrow.svg" alt="">
                     <span>Github</span>
                   </div>
                 </a>
@@ -579,13 +616,13 @@
                   <div class="badge-top">
                     <div class="badge-top--profile">
                       <div class="badge-top--container--svg">
-                        <img class="cm-body--img icn-svg" src="src/images/svg/linkedinw.svg" alt>
+                        <img class="cm-body--img icn-svg" src="src/images/svg/linkedinw.svg" alt="">
                       </div>
                       <span data-acc="Mohammed Rinsham">Mohammed Rinsham</span>
                     </div>
                   </div>
                   <div class="badge-footer">
-                    <img class="icn-svg" src="src/images/svg/bentarrow.svg" alt>
+                    <img class="icn-svg" src="src/images/svg/bentarrow.svg" alt="">
                     <span>LinkedIn</span>
                   </div>
                 </a>
@@ -757,7 +794,7 @@
     <aside class="tooltip" style="left:0;top:0;" data-tooltip-active="false">
       <span class="tooltip-content"></span>
       <span class="tooltip-caret" style="top:0;left:0;right:0;margin:auto;transform:translateY(-12px);">
-        <img class="icn-svg" src="src/images/svg/caretup.svg" alt>
+        <img class="icn-svg" src="src/images/svg/caretup.svg" alt="">
       </span>
     </aside>
 
@@ -971,6 +1008,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     });
+    // Set first tab as active on load
+    const firstRadio = container.querySelector(".proj-header__tabinput");
+    if(firstRadio) {
+      firstRadio.checked = true;
+    }
   });
 });
 
@@ -1005,6 +1047,17 @@ function updateISTClock() {
 updateISTClock();
 setInterval(updateISTClock, 1000);
 
+// --- JAVASCRIPT for Toggle Button ---
+document.getElementById('toggle-projects-btn').addEventListener('click', function() {
+  const moreProjects = document.getElementById('more-projects-container');
+  if (moreProjects.style.display === 'none' || moreProjects.style.display === '') {
+    moreProjects.style.display = 'block';
+    this.textContent = 'Show Less';
+  } else {
+    moreProjects.style.display = 'none';
+    this.textContent = 'More Projects';
+  }
+});
 
 
 </script>
